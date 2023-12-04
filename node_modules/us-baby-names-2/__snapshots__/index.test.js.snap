@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`byName Mary The first ten records match the previous snapshot 1`] = `
+[
+  {
+    "count": 7065,
+    "sex": "F",
+    "year": 1880,
+  },
+  {
+    "count": 27,
+    "sex": "M",
+    "year": 1880,
+  },
+  {
+    "count": 6919,
+    "sex": "F",
+    "year": 1881,
+  },
+  {
+    "count": 29,
+    "sex": "M",
+    "year": 1881,
+  },
+  {
+    "count": 8148,
+    "sex": "F",
+    "year": 1882,
+  },
+  {
+    "count": 30,
+    "sex": "M",
+    "year": 1882,
+  },
+  {
+    "count": 8012,
+    "sex": "F",
+    "year": 1883,
+  },
+  {
+    "count": 32,
+    "sex": "M",
+    "year": 1883,
+  },
+  {
+    "count": 9217,
+    "sex": "F",
+    "year": 1884,
+  },
+  {
+    "count": 36,
+    "sex": "M",
+    "year": 1884,
+  },
+]
+`;
+
+exports[`byYear 2021 The first ten records match the previous snapshot 1`] = `
+[
+  {
+    "count": 17728,
+    "name": "Olivia",
+    "sex": "F",
+  },
+  {
+    "count": 15433,
+    "name": "Emma",
+    "sex": "F",
+  },
+  {
+    "count": 13285,
+    "name": "Charlotte",
+    "sex": "F",
+  },
+  {
+    "count": 12952,
+    "name": "Amelia",
+    "sex": "F",
+  },
+  {
+    "count": 12759,
+    "name": "Ava",
+    "sex": "F",
+  },
+  {
+    "count": 12496,
+    "name": "Sophia",
+    "sex": "F",
+  },
+  {
+    "count": 11201,
+    "name": "Isabella",
+    "sex": "F",
+  },
+  {
+    "count": 11096,
+    "name": "Mia",
+    "sex": "F",
+  },
+  {
+    "count": 9434,
+    "name": "Evelyn",
+    "sex": "F",
+  },
+  {
+    "count": 8388,
+    "name": "Harper",
+    "sex": "F",
+  },
+]
+`;
