@@ -42,7 +42,16 @@ const formatToHTML = function(dataArr) {
       newName.substr(1)
     return newName
   }
-  
+
+// Path 1: /baby-name/<name>
+router.get('/baby-name/:name', function(req, res) {
+  let data = byName[fixName(req.params.name)];
+  res.send(formatToHTML(data));
+})
+
+router.get('baby-name/:name/:year', function(req, res) {
+  let data = byName()
+}) 
 
 app.get('/', (req, res) => {
     res.append('Content-Type', 'text/html');
