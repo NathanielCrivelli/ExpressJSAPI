@@ -50,8 +50,12 @@ router.get('/baby-name/:name', function(req, res) {
 })
 
 router.get('baby-name/:name/:year', function(req, res) {
-  let data = byName()
-}) 
+  let data = byYear[req.params.year];
+  data.filter(name => fixName(name) == req.params.name);
+  res.send(formatToHTML(data));
+})
+
+router.get('baby-name/:name/after/:afterYear')
 
 app.get('/', (req, res) => {
     res.append('Content-Type', 'text/html');
