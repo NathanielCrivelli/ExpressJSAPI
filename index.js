@@ -43,19 +43,30 @@ const formatToHTML = function(dataArr) {
     return newName
   }
 
-// Path 1: /baby-name/<name>
-router.get('/baby-name/:name', function(req, res) {
+app.get('/baby-name/:name', function(req, res) {
   let data = byName[fixName(req.params.name)];
   res.send(formatToHTML(data));
 })
 
-router.get('baby-name/:name/:year', function(req, res) {
-  let data = byYear[req.params.year];
-  data.filter(name => fixName(name) == req.params.name);
-  res.send(formatToHTML(data));
+app.get('/baby-name/:name/:year', function(req, res) {
+  let data = byName[fixName(req.params.name)];
+  res.send(formatToHTML(data.filter(baby => baby.year == req.params.year)));
 })
 
-router.get('baby-name/:name/after/:afterYear')
+app.get('/baby-name/:name/after/:afterYear', function(req, res) {
+  let data = byName[fixName(req.params.name)];
+  res.send(formatToHTML(data.filter(baby => baby.year > req.params.afterYear)));
+})
+
+app.get('/baby-name/:name/before/:beforeYear', function(req, res) {
+  let data = byName[fixName(req.params.name)];
+  res.send(formatToHTML(data.filter(baby => baby.year < req.params.beforeYear)));
+}) 
+
+app.get('/baby-name/:year', function(req, res) {
+  let data = byYear[req.params.year];
+  res.send(formatToHTML(data));
+})
 
 app.get('/', (req, res) => {
     res.append('Content-Type', 'text/html');
