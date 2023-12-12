@@ -61,7 +61,7 @@ app.get('/baby-name/:name/after/:afterYear', function(req, res) {
 app.get('/baby-name/:name/before/:beforeYear', function(req, res) {
   let data = byName[fixName(req.params.name)];
   res.send(formatToHTML(data.filter(baby => baby.year < req.params.beforeYear)));
-}) 
+})
 
 app.get('/baby-year/:year', function(req, res) {
   let data = byYear[req.params.year];
@@ -75,12 +75,12 @@ app.get('/baby-year/:year/:name', function(req, res) {
 
 app.get('/baby-year-start/:year/:letter', function(req, res) {
   let data = byYear[req.params.year];
-  res.send(formatToHTML(data.filter(baby => baby.name.charAt(0) == req.params.letter)));
+  res.send(formatToHTML(data.filter(baby => baby.name.charAt(0) == fixName(req.params.letter))));
 })
 
 app.get('/baby-year-end/:year/:letter', function(req, res) {
   let data = byYear[req.params.year];
-  res.send(formatToHTML(data.filter(baby => baby.name.charAt(baby.name.length - 1) == req.params.letter.toLowerCase)));
+  res.send(formatToHTML(data.filter(baby => fixName(baby.name.charAt(baby.name.length - 1)) == fixName(req.params.letter))));
 })
 
 app.get('/', (req, res) => {
